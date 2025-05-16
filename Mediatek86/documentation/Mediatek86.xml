@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mediatek86</name>
+    </assembly>
+    <members>
+        <member name="F:Mediatek86.bddmanager.BddManager.instance">
+            <summary>
+            instance unique de la classe
+            </summary>
+        </member>
+        <member name="F:Mediatek86.bddmanager.BddManager.connection">
+            <summary>
+            objet de connexion à la BDD à partir d'une chaîne de connexion
+            </summary>
+        </member>
+        <member name="M:Mediatek86.bddmanager.BddManager.#ctor(System.String)">
+            <summary>
+            Constructeur pour créer la connexion à la BDD et l'ouvrir
+            </summary>
+            <param name="stringConnect">chaine de connexion</param>
+        </member>
+        <member name="M:Mediatek86.bddmanager.BddManager.GetInstance(System.String)">
+            <summary>
+            Création d'une seule instance de la classe
+            </summary>
+            <param name="stringConnect">chaine de connexion</param>
+            <returns>instance unique de la classe</returns>
+        </member>
+        <member name="M:Mediatek86.bddmanager.BddManager.ReqControle(System.String)">
+            <summary>
+            Exécution d'une requête de type LCT (begin transaction, commit, rollback)
+            </summary>
+            <param name="stringQuery">requête</param>
+        </member>
+        <member name="M:Mediatek86.bddmanager.BddManager.ReqUpdate(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Exécution d'une requête de type LMD (insert, update, delete)
+            </summary>
+            <param name="stringQuery">requête autre que select</param>
+            <param name="parameters">dictionnire contenant les parametres</param>
+        </member>
+        <member name="M:Mediatek86.bddmanager.BddManager.ReqSelect(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Execution d'une requête de type LIT (select)
+            </summary>
+            <param name="stringQuery">requête select</param>
+            <param name="parameters">dictoinnaire contenant les parametres</param>
+            <returns>liste de tableaux d'objets contenant les valeurs des colonnes</returns>
+        </member>
+        <member name="T:Mediatek86.dal.AbsenceAccess">
+            <summary>
+            Classe permettant de gérer les demandes concernant les absences
+            </summary>
+        </member>
+        <member name="F:Mediatek86.dal.AbsenceAccess.access">
+            <summary>
+            Instance unique de l'accès aux données
+            </summary>
+        </member>
+        <member name="M:Mediatek86.dal.AbsenceAccess.#ctor">
+            <summary>
+            Constructeur pour créer l'accès aux données
+            </summary>
+        </member>
+        <member name="F:Mediatek86.dal.Access.connectionName">
+            <summary>
+            nom de connexion à la bdd
+            </summary>
+        </member>
+        <member name="F:Mediatek86.dal.Access.instance">
+            <summary>
+            instance unique de la classe
+            </summary>
+        </member>
+        <member name="P:Mediatek86.dal.Access.Manager">
+            <summary>
+            Getter sur l'objet d'accès aux données
+            </summary>
+        </member>
+        <member name="M:Mediatek86.dal.Access.#ctor">
+            <summary>
+            Création unique de l'objet de type BddManager
+            Arrête le programme si l'accès à la BDD a échoué
+            </summary>
+        </member>
+        <member name="M:Mediatek86.dal.Access.GetInstance">
+            <summary>
+            Création d'une seule instance de la classe
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mediatek86.dal.Access.GetConnectionStringByName(System.String)">
+            <summary>
+            Récupération de la chaîne de connexion
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mediatek86.dal.MotifAccess">
+            <summary>
+            Classe permettant de gérer les demandes concernant les motifs d'absences
+            </summary>
+        </member>
+        <member name="F:Mediatek86.dal.MotifAccess.access">
+            <summary>
+            Instance unique de l'accès aux données
+            </summary>
+        </member>
+        <member name="M:Mediatek86.dal.MotifAccess.#ctor">
+            <summary>
+            Constructeur pour créer l'accès aux données
+            </summary>
+        </member>
+        <member name="T:Mediatek86.dal.PersonnelAccess">
+            <summary>
+            Classe permettant de gérer les demandes concernant le personnel
+            </summary>
+        </member>
+        <member name="F:Mediatek86.dal.PersonnelAccess.access">
+            <summary>
+            Instance unique de l'accès aux données
+            </summary>
+        </member>
+        <member name="M:Mediatek86.dal.PersonnelAccess.#ctor">
+            <summary>
+            Constructeur pour créer l'accès aux données
+            </summary>
+        </member>
+        <member name="T:Mediatek86.dal.ServiceAccess">
+            <summary>
+            Classe permettant de gérer les demandes concernant les services
+            </summary>
+        </member>
+        <member name="F:Mediatek86.dal.ServiceAccess.access">
+            <summary>
+            Instance unique de l'accès aux données
+            </summary>
+        </member>
+        <member name="M:Mediatek86.dal.ServiceAccess.#ctor">
+            <summary>
+            Constructeur pour créer l'accès aux données
+            </summary>
+        </member>
+        <member name="M:Mediatek86.model.Absence.#ctor(Mediatek86.model.Personnel,System.DateTime,System.DateTime,Mediatek86.model.Motif)">
+            <summary>
+            Valorise les propriétés
+            </summary>
+            <param name="personnel"></param>
+            <param name="datedebut"></param>
+            <param name="datefin"></param>
+            <param name="motif"></param>
+        </member>
+        <member name="M:Mediatek86.model.Motif.#ctor(System.Int32,System.String)">
+            <summary>
+            Valorise les propriétés
+            </summary>
+            <param name="idmotif"></param>
+            <param name="nom"></param>
+        </member>
+        <member name="M:Mediatek86.model.Motif.ToString">
+            <summary>
+            Définit l'information à afficher (juste le nom)
+            </summary>
+            <returns>nom du profil</returns>
+        </member>
+        <member name="M:Mediatek86.model.Personnel.#ctor(System.Int32,System.String,System.String,System.String,System.String,Mediatek86.model.Service)">
+            <summary>
+            Valorise les propriétés
+            </summary>
+            <param name="idpersonnel"></param>
+            <param name="nom"></param>
+            <param name="prenom"></param>
+            <param name="tel"></param>
+            <param name="mail"></param>
+            <param name="service"></param>
+        </member>
+        <member name="M:Mediatek86.model.Responsable.#ctor(System.String,System.String)">
+            <summary>
+            Valorise les propriétés
+            </summary>
+            <param name="login"></param>
+            <param name="pwd"></param>
+        </member>
+        <member name="M:Mediatek86.model.Service.#ctor(System.Int32,System.String)">
+            <summary>
+            Valorise les propriétés
+            </summary>
+            <param name="idservice"></param>
+            <param name="nom"></param>
+        </member>
+        <member name="M:Mediatek86.model.Service.ToString">
+            <summary>
+            Définit l'information à afficher (juste le nom)
+            </summary>
+            <returns>nom du profil</returns>
+        </member>
+        <member name="M:Mediatek86.Program.Main">
+            <summary>
+            Point d'entrée principal de l'application.
+            </summary>
+        </member>
+        <member name="F:Mediatek86.view.FrmAbsence.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Mediatek86.view.FrmAbsence.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Mediatek86.view.FrmAbsence.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Mediatek86.view.FrmAuthentification.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Mediatek86.view.FrmAuthentification.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Mediatek86.view.FrmAuthentification.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Mediatek86.view.FrmPersonnel.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Mediatek86.view.FrmPersonnel.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Mediatek86.view.FrmPersonnel.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Mediatek86.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:Mediatek86.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:Mediatek86.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+    </members>
+</doc>
