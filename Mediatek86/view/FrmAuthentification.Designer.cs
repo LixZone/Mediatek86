@@ -33,7 +33,6 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.labelPwd = new System.Windows.Forms.Label();
             this.txtPwd = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelLogin
@@ -51,7 +50,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(183, 20);
             this.txtLogin.TabIndex = 14;
-            this.txtLogin.Text = "Rooney";
+            this.txtLogin.Text = "mediatek";
             // 
             // btnConnect
             // 
@@ -61,6 +60,7 @@
             this.btnConnect.TabIndex = 17;
             this.btnConnect.Text = "se connecter";
             this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.BtnConnect_Click);
             // 
             // labelPwd
             // 
@@ -78,24 +78,13 @@
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(183, 20);
             this.txtPwd.TabIndex = 16;
-            this.txtPwd.Text = "Nolan";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(88, 130);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Le login/pwd est incorrect";
+            this.txtPwd.Text = "mediatek";
             // 
             // FrmAuthentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 163);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.btnConnect);
@@ -115,6 +104,5 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label labelPwd;
         private System.Windows.Forms.TextBox txtPwd;
-        private System.Windows.Forms.Label label1;
     }
 }
