@@ -138,21 +138,21 @@ CREATE TABLE personnel (
 --
 
 INSERT INTO personnel (idpersonnel, nom, prenom, tel, mail, idservice) VALUES
-(1, 'Mcdonald', 'Mufutau', '03 02 33 67 78', 'sem.pellentesque@icloud.ca', 0),
-(2, 'Maynard', 'Whilemina', '06 73 62 46 13', 'egestas.a.dui@aol.net', 0),
-(3, 'Castro', 'Audrey', '04 65 26 61 68', 'sapien@yahoo.org', 0),
-(4, 'Steele', 'Catherine', '05 08 84 47 28', 'nullam.ut@hotmail.com', 0),
-(5, 'Hurst', 'Amy', '04 29 38 55 87', 'convallis.dolor@icloud.edu', 0),
-(6, 'Snow', 'Barry', '07 35 23 56 85', 'nunc.interdum@google.com', 0),
-(7, 'Hardy', 'Macy', '04 68 56 89 34', 'suspendisse.ac@protonmail.couk', 0),
-(8, 'Williams', 'Jemima', '09 08 73 61 79', 'quis.pede@outlook.ca', 0),
-(9, 'Craft', 'Wyoming', '03 37 75 08 45', 'fringilla.purus@aol.ca', 0),
-(10, 'Foreman', 'Jordan', '06 48 84 37 79', 'nec.tempus.scelerisque@protonmail.edu', 0),
-(11, 'Johnston', 'Chantale', '05 63 78 56 54', 'pede.ac.urna@google.net', 0),
-(12, 'Wilcox', 'Stewart', '07 15 42 68 36', 'erat.etiam.vestibulum@google.ca', 0),
-(13, 'Chambers', 'Garth', '06 73 12 16 12', 'varius@hotmail.org', 0),
-(14, 'Roberts', 'Keefe', '02 81 07 84 42', 'nunc.risus@icloud.couk', 0),
-(15, 'Valencia', 'Brooke', '06 41 48 32 75', 'eu.tellus.eu@outlook.net', 0);
+(1, 'Mcdonald', 'Mufutau', '03 02 33 67 78', 'sem.pellentesque@icloud.ca', 2),
+(2, 'Maynard', 'Whilemina', '06 73 62 46 13', 'egestas.a.dui@aol.net', 1),
+(3, 'Castro', 'Audrey', '04 65 26 61 68', 'sapien@yahoo.org', 1),
+(4, 'Steele', 'Catherine', '05 08 84 47 28', 'nullam.ut@hotmail.com', 3),
+(5, 'Hurst', 'Amy', '04 29 38 55 87', 'convallis.dolor@icloud.edu', 2),
+(6, 'Snow', 'Barry', '07 35 23 56 85', 'nunc.interdum@google.com', 2),
+(7, 'Hardy', 'Macy', '04 68 56 89 34', 'suspendisse.ac@protonmail.couk', 2),
+(8, 'Williams', 'Jemima', '09 08 73 61 79', 'quis.pede@outlook.ca', 1),
+(9, 'Craft', 'Wyoming', '03 37 75 08 45', 'fringilla.purus@aol.ca', 2),
+(10, 'Foreman', 'Jordan', '06 48 84 37 79', 'nec.tempus.scelerisque@protonmail.edu', 1),
+(11, 'Johnston', 'Chantale', '05 63 78 56 54', 'pede.ac.urna@google.net', 3),
+(12, 'Wilcox', 'Stewart', '07 15 42 68 36', 'erat.etiam.vestibulum@google.ca', 2),
+(13, 'Chambers', 'Garth', '06 73 12 16 12', 'varius@hotmail.org', 3),
+(14, 'Roberts', 'Keefe', '02 81 07 84 42', 'nunc.risus@icloud.couk', 1),
+(15, 'Valencia', 'Brooke', '06 41 48 32 75', 'eu.tellus.eu@outlook.net', 1);
 
 -- --------------------------------------------------------
 

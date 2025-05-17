@@ -55,5 +55,45 @@ namespace Mediatek86.dal
             }
             return false;
         }
+
+
+        /// <summary>
+        /// Récupère et retourne la liste du personnel
+        /// </summary>
+        /// <returns>liste du personnel</returns>
+        public List<Personnel> GetListePersonnel()
+        {
+            List<Personnel> listePersonnel = new List<Personnel>();
+            if (access.Manager != null)
+            {
+                string req = "select p.idpersonnel as idpersonnel, p.nom as nom, p.prenom as prenom, p.tel as tel, p.mail as mail, s.idservice as idservice, s.nom as service ";
+                req += "from personnel p join service s on (p.idservice = s.idservice) ";
+                req += "order by nom, prenom;";
+                try
+                {
+                    List<Object[]> records = access.Manager.ReqSelect(req);
+                    if (records != null)
+                    {
+                        Log.Debug("PersonnelAccess.GetListePersonnel nb records = {0}", records.Count);
+                        foreach (Object[] record in records)
+                        {
+                            Log.Debug("PersonnelAccess.GetListePersonnel Service : id={0} nom={1}", record[5], record[6]);
+                            Log.Debug("PersonnelAccess.GetListePersonnel Personnel : id={0} nom={1} prenom={2} tel={3} mail={4} ", record[0], record[1], record[2], record[3], record[4]);
+                            Service service = new Service((int)record[5], (string)record[6]);
+                            Personnel personnel = new Personnel((int)record[0], (string)record[1], (string)record[2],
+                                (string)record[3], (string)record[4], service);
+                            listePersonnel.Add(personnel);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Log.Error("PersonnelAccess.GetListePersonnel catch req={0} erreur={1}", req, e.Message);
+                    Environment.Exit(0);
+                }
+            }
+            return listePersonnel;
+        }
     }
 }
