@@ -95,5 +95,66 @@ namespace Mediatek86.dal
             }
             return listePersonnel;
         }
+
+        /// <summary>
+        /// Demande d'ajout un personnel
+        /// </summary>
+        /// <param name="personnel">objet personnel à ajouter</param>
+        public void AddPersonnel(Personnel personnel)
+        {
+            if (access.Manager != null)
+            {
+                string req = "insert into personnel(nom, prenom, tel, mail, idservice) ";
+                req += "values (@nom, @prenom, @tel, @mail, @idservice);";
+                Dictionary<string, object> parameters = new Dictionary<string, object> {
+                    { "@nom", personnel.Nom },
+                    { "@prenom", personnel.Prenom },
+                    { "@tel", personnel.Tel },
+                    { "@mail", personnel.Mail },
+                    { "@idservice", personnel.Service.Idservice }
+                };
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Log.Error("PersonnelAccess.AddPersonnel catch req={0} erreur={1}", req, e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Demande de modification d'un personnel
+        /// </summary>
+        /// <param name="personnel">objet personnel à modifier</param>
+        public void UpdatePersonnel(Personnel personnel)
+        {
+            if (access.Manager != null)
+            {
+                string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
+                req += "where idpersonnel = @idpersonnel;";
+                Dictionary<string, object> parameters = new Dictionary<string, object> {
+                    { "@idpersonnel", personnel.Idpersonnel },
+                    { "@nom", personnel.Nom },
+                    { "@prenom", personnel.Prenom },
+                    { "@tel", personnel.Tel },
+                    { "@mail", personnel.Mail },
+                    { "@idservice", personnel.Service.Idservice }
+                };
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Log.Error("PersonnelAccess.UpdatePersonnel catch req={0} erreur={1}", req, e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
     }
 }

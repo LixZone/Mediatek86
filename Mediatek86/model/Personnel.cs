@@ -13,7 +13,7 @@
         /// <param name="service"></param>
         public Personnel(int idpersonnel, string nom, string prenom, string tel, string mail, Service service)
         {
-            this.idpersonnel = idpersonnel;
+            this.Idpersonnel = idpersonnel;
             this.Nom = nom;
             this.Prenom = prenom;
             this.Tel = tel;
@@ -21,7 +21,7 @@
             this.Service = service;
         }
 
-        public int idpersonnel { get; }
+        public int Idpersonnel { get; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Tel { get; set; }

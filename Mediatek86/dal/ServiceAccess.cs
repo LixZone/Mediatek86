@@ -56,5 +56,55 @@ namespace Mediatek86.dal
             }
             return listeService;
         }
+
+        /// <summary>
+        /// Ajout d'un service
+        /// </summary>
+        /// <param name="service"></param>
+        public void AddService(Service service)
+        {
+            if (access.Manager != null)
+            {
+                string req = "insert into service (nom) values (@nom);";
+                Dictionary<string, object> parameters = new Dictionary<string, object> {
+                    { "@nom", service.Nom }
+                };
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Log.Error("ServiceAccess.AddService catch req={0} erreur={1}", req, e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Suppression d'un service
+        /// </summary>
+        /// <param name="service"></param>
+        public void DelService(Service service)
+        {
+            if (access.Manager != null)
+            {
+                string req = "delete from service where idservice = @idservice;";
+                Dictionary<string, object> parameters = new Dictionary<string, object> {
+                    { "@idservice", service.Idservice }
+                };
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Log.Error("ServiceAccess.DelService catch req={0} erreur={1}", req, e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
     }
 }

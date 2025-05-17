@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.grbPersonnel = new System.Windows.Forms.GroupBox();
-            this.btnAddProfil = new System.Windows.Forms.Button();
-            this.btnDelProfil = new System.Windows.Forms.Button();
-            this.txtProfil = new System.Windows.Forms.TextBox();
+            this.btnAddService = new System.Windows.Forms.Button();
+            this.btnDelService = new System.Windows.Forms.Button();
+            this.txtService = new System.Windows.Forms.TextBox();
             this.btnAnnulPersonnel = new System.Windows.Forms.Button();
             this.btnEnregPersonnel = new System.Windows.Forms.Button();
-            this.cboProfil = new System.Windows.Forms.ComboBox();
+            this.cboService = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,12 +56,12 @@
             // 
             // grbPersonnel
             // 
-            this.grbPersonnel.Controls.Add(this.btnAddProfil);
-            this.grbPersonnel.Controls.Add(this.btnDelProfil);
-            this.grbPersonnel.Controls.Add(this.txtProfil);
+            this.grbPersonnel.Controls.Add(this.btnAddService);
+            this.grbPersonnel.Controls.Add(this.btnDelService);
+            this.grbPersonnel.Controls.Add(this.txtService);
             this.grbPersonnel.Controls.Add(this.btnAnnulPersonnel);
             this.grbPersonnel.Controls.Add(this.btnEnregPersonnel);
-            this.grbPersonnel.Controls.Add(this.cboProfil);
+            this.grbPersonnel.Controls.Add(this.cboService);
             this.grbPersonnel.Controls.Add(this.label5);
             this.grbPersonnel.Controls.Add(this.label4);
             this.grbPersonnel.Controls.Add(this.label3);
@@ -78,30 +78,32 @@
             this.grbPersonnel.TabStop = false;
             this.grbPersonnel.Text = "ajouter un employé";
             // 
-            // btnAddProfil
+            // btnAddService
             // 
-            this.btnAddProfil.Location = new System.Drawing.Point(521, 94);
-            this.btnAddProfil.Name = "btnAddProfil";
-            this.btnAddProfil.Size = new System.Drawing.Size(78, 23);
-            this.btnAddProfil.TabIndex = 13;
-            this.btnAddProfil.Text = "ajouter";
-            this.btnAddProfil.UseVisualStyleBackColor = true;
+            this.btnAddService.Location = new System.Drawing.Point(521, 94);
+            this.btnAddService.Name = "btnAddService";
+            this.btnAddService.Size = new System.Drawing.Size(78, 23);
+            this.btnAddService.TabIndex = 13;
+            this.btnAddService.Text = "ajouter";
+            this.btnAddService.UseVisualStyleBackColor = true;
+            this.btnAddService.Click += new System.EventHandler(this.BtnAddService_Click);
             // 
-            // btnDelProfil
+            // btnDelService
             // 
-            this.btnDelProfil.Location = new System.Drawing.Point(521, 69);
-            this.btnDelProfil.Name = "btnDelProfil";
-            this.btnDelProfil.Size = new System.Drawing.Size(78, 23);
-            this.btnDelProfil.TabIndex = 12;
-            this.btnDelProfil.Text = "supprimer";
-            this.btnDelProfil.UseVisualStyleBackColor = true;
+            this.btnDelService.Location = new System.Drawing.Point(521, 69);
+            this.btnDelService.Name = "btnDelService";
+            this.btnDelService.Size = new System.Drawing.Size(78, 23);
+            this.btnDelService.TabIndex = 12;
+            this.btnDelService.Text = "supprimer";
+            this.btnDelService.UseVisualStyleBackColor = true;
+            this.btnDelService.Click += new System.EventHandler(this.BtnDelService_Click);
             // 
-            // txtProfil
+            // txtService
             // 
-            this.txtProfil.Location = new System.Drawing.Point(355, 96);
-            this.txtProfil.Name = "txtProfil";
-            this.txtProfil.Size = new System.Drawing.Size(159, 20);
-            this.txtProfil.TabIndex = 11;
+            this.txtService.Location = new System.Drawing.Point(355, 96);
+            this.txtService.Name = "txtService";
+            this.txtService.Size = new System.Drawing.Size(159, 20);
+            this.txtService.TabIndex = 11;
             // 
             // btnAnnulPersonnel
             // 
@@ -111,6 +113,7 @@
             this.btnAnnulPersonnel.TabIndex = 10;
             this.btnAnnulPersonnel.Text = "annuler";
             this.btnAnnulPersonnel.UseVisualStyleBackColor = true;
+            this.btnAnnulPersonnel.Click += new System.EventHandler(this.BtnAnnulPersonnel_Click);
             // 
             // btnEnregPersonnel
             // 
@@ -120,23 +123,24 @@
             this.btnEnregPersonnel.TabIndex = 9;
             this.btnEnregPersonnel.Text = "enregistrer";
             this.btnEnregPersonnel.UseVisualStyleBackColor = true;
+            this.btnEnregPersonnel.Click += new System.EventHandler(this.BtnEnregPersonnel_Click);
             // 
-            // cboProfil
+            // cboService
             // 
-            this.cboProfil.FormattingEnabled = true;
-            this.cboProfil.Location = new System.Drawing.Point(354, 71);
-            this.cboProfil.Name = "cboProfil";
-            this.cboProfil.Size = new System.Drawing.Size(161, 21);
-            this.cboProfil.TabIndex = 8;
+            this.cboService.FormattingEnabled = true;
+            this.cboService.Location = new System.Drawing.Point(354, 71);
+            this.cboService.Name = "cboService";
+            this.cboService.Size = new System.Drawing.Size(161, 21);
+            this.cboService.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(308, 74);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 13);
+            this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "profil";
+            this.label5.Text = "service";
             // 
             // label4
             // 
@@ -245,6 +249,7 @@
             this.btnDemandeModifPersonnel.TabIndex = 1;
             this.btnDemandeModifPersonnel.Text = "modifier";
             this.btnDemandeModifPersonnel.UseVisualStyleBackColor = true;
+            this.btnDemandeModifPersonnel.Click += new System.EventHandler(this.BtnDemandeModifPersonnel_Click);
             // 
             // dgvPersonnel
             // 
@@ -281,12 +286,12 @@
 
         #endregion
         private System.Windows.Forms.GroupBox grbPersonnel;
-        private System.Windows.Forms.Button btnAddProfil;
-        private System.Windows.Forms.Button btnDelProfil;
-        private System.Windows.Forms.TextBox txtProfil;
+        private System.Windows.Forms.Button btnAddService;
+        private System.Windows.Forms.Button btnDelService;
+        private System.Windows.Forms.TextBox txtService;
         private System.Windows.Forms.Button btnAnnulPersonnel;
         private System.Windows.Forms.Button btnEnregPersonnel;
-        private System.Windows.Forms.ComboBox cboProfil;
+        private System.Windows.Forms.ComboBox cboService;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

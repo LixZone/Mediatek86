@@ -44,5 +44,41 @@ namespace Mediatek86.controller
         {
             return serviceAccess.GetListeService();
         }
+
+        /// <summary>
+        /// Demande d'ajout d'un personnel
+        /// </summary>
+        /// <param name="personnel">objet personnel à ajouter</param>
+        public void AddPersonnel(Personnel personnel)
+        {
+            personnelAccess.AddPersonnel(personnel);
+        }
+
+        /// <summary>
+        /// Demande de modification d'un personnel
+        /// </summary>
+        /// <param name="personnel">objet personnel à modifier</param>
+        public void UpdatePersonnel(Personnel personnel)
+        {
+            personnelAccess.UpdatePersonnel(personnel);
+        }
+
+        /// <summary>
+        /// Demande d'ajout d'un service 
+        /// </summary>
+        /// <param name="service"></param>
+        public void AddService(Service service)
+        {
+            serviceAccess.AddService(service);
+        }
+
+        /// <summary>
+        /// Demande de suppression d'un service
+        /// </summary>
+        /// <param name="service">objet service à supprimer</param>
+        public void DelService(Service service)
+        {
+            serviceAccess.DelService(service);
+        }
     }
 }
