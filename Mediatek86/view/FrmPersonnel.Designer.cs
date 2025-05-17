@@ -277,7 +277,7 @@
             this.Controls.Add(this.grbPersonnel);
             this.Controls.Add(this.grbListePersonnel);
             this.Name = "FrmPersonnel";
-            this.Text = "Gestion du personnel";
+            this.Text = "f";
             this.grbPersonnel.ResumeLayout(false);
             this.grbPersonnel.PerformLayout();
             this.grbListePersonnel.ResumeLayout(false);

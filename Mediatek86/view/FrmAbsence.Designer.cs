@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.grbAbsence = new System.Windows.Forms.GroupBox();
+            this.dateDebut = new System.Windows.Forms.DateTimePicker();
+            this.dateFin = new System.Windows.Forms.DateTimePicker();
             this.btnAddMotif = new System.Windows.Forms.Button();
             this.btnDelMotif = new System.Windows.Forms.Button();
             this.txtMotif = new System.Windows.Forms.TextBox();
-            this.btnAnnulPersonnel = new System.Windows.Forms.Button();
-            this.btnEnregPersonnel = new System.Windows.Forms.Button();
+            this.btnAnnulAbsence = new System.Windows.Forms.Button();
+            this.btnEnregAbsence = new System.Windows.Forms.Button();
             this.cboMotif = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grbListeAbsences = new System.Windows.Forms.GroupBox();
+            this.btnDemandeSupprAbsence = new System.Windows.Forms.Button();
             this.btnDemandeAjoutAbsence = new System.Windows.Forms.Button();
             this.dgvAbsences = new System.Windows.Forms.DataGridView();
-            this.dateFin = new System.Windows.Forms.DateTimePicker();
-            this.dateDebut = new System.Windows.Forms.DateTimePicker();
-            this.btnDemandeSupprAbsence = new System.Windows.Forms.Button();
             this.grbAbsence.SuspendLayout();
             this.grbListeAbsences.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbsences)).BeginInit();
@@ -56,8 +56,8 @@
             this.grbAbsence.Controls.Add(this.btnAddMotif);
             this.grbAbsence.Controls.Add(this.btnDelMotif);
             this.grbAbsence.Controls.Add(this.txtMotif);
-            this.grbAbsence.Controls.Add(this.btnAnnulPersonnel);
-            this.grbAbsence.Controls.Add(this.btnEnregPersonnel);
+            this.grbAbsence.Controls.Add(this.btnAnnulAbsence);
+            this.grbAbsence.Controls.Add(this.btnEnregAbsence);
             this.grbAbsence.Controls.Add(this.cboMotif);
             this.grbAbsence.Controls.Add(this.label5);
             this.grbAbsence.Controls.Add(this.label4);
@@ -69,6 +69,20 @@
             this.grbAbsence.TabStop = false;
             this.grbAbsence.Text = "ajouter une absence";
             // 
+            // dateDebut
+            // 
+            this.dateDebut.Location = new System.Drawing.Point(72, 19);
+            this.dateDebut.Name = "dateDebut";
+            this.dateDebut.Size = new System.Drawing.Size(200, 20);
+            this.dateDebut.TabIndex = 15;
+            // 
+            // dateFin
+            // 
+            this.dateFin.Location = new System.Drawing.Point(356, 19);
+            this.dateFin.Name = "dateFin";
+            this.dateFin.Size = new System.Drawing.Size(200, 20);
+            this.dateFin.TabIndex = 14;
+            // 
             // btnAddMotif
             // 
             this.btnAddMotif.Location = new System.Drawing.Point(523, 68);
@@ -77,6 +91,7 @@
             this.btnAddMotif.TabIndex = 13;
             this.btnAddMotif.Text = "ajouter";
             this.btnAddMotif.UseVisualStyleBackColor = true;
+            this.btnAddMotif.Click += new System.EventHandler(this.BtnAddMotif_Click);
             // 
             // btnDelMotif
             // 
@@ -86,6 +101,7 @@
             this.btnDelMotif.TabIndex = 12;
             this.btnDelMotif.Text = "supprimer";
             this.btnDelMotif.UseVisualStyleBackColor = true;
+            this.btnDelMotif.Click += new System.EventHandler(this.BtnDelMotif_Click);
             // 
             // txtMotif
             // 
@@ -94,23 +110,25 @@
             this.txtMotif.Size = new System.Drawing.Size(159, 20);
             this.txtMotif.TabIndex = 11;
             // 
-            // btnAnnulPersonnel
+            // btnAnnulAbsence
             // 
-            this.btnAnnulPersonnel.Location = new System.Drawing.Point(87, 98);
-            this.btnAnnulPersonnel.Name = "btnAnnulPersonnel";
-            this.btnAnnulPersonnel.Size = new System.Drawing.Size(75, 23);
-            this.btnAnnulPersonnel.TabIndex = 10;
-            this.btnAnnulPersonnel.Text = "annuler";
-            this.btnAnnulPersonnel.UseVisualStyleBackColor = true;
+            this.btnAnnulAbsence.Location = new System.Drawing.Point(87, 98);
+            this.btnAnnulAbsence.Name = "btnAnnulAbsence";
+            this.btnAnnulAbsence.Size = new System.Drawing.Size(75, 23);
+            this.btnAnnulAbsence.TabIndex = 10;
+            this.btnAnnulAbsence.Text = "annuler";
+            this.btnAnnulAbsence.UseVisualStyleBackColor = true;
+            this.btnAnnulAbsence.Click += new System.EventHandler(this.BtnAnnulAbsence_Click);
             // 
-            // btnEnregPersonnel
+            // btnEnregAbsence
             // 
-            this.btnEnregPersonnel.Location = new System.Drawing.Point(6, 98);
-            this.btnEnregPersonnel.Name = "btnEnregPersonnel";
-            this.btnEnregPersonnel.Size = new System.Drawing.Size(75, 23);
-            this.btnEnregPersonnel.TabIndex = 9;
-            this.btnEnregPersonnel.Text = "enregistrer";
-            this.btnEnregPersonnel.UseVisualStyleBackColor = true;
+            this.btnEnregAbsence.Location = new System.Drawing.Point(6, 98);
+            this.btnEnregAbsence.Name = "btnEnregAbsence";
+            this.btnEnregAbsence.Size = new System.Drawing.Size(75, 23);
+            this.btnEnregAbsence.TabIndex = 9;
+            this.btnEnregAbsence.Text = "enregistrer";
+            this.btnEnregAbsence.UseVisualStyleBackColor = true;
+            this.btnEnregAbsence.Click += new System.EventHandler(this.BtnEnregAbsence_Click);
             // 
             // cboMotif
             // 
@@ -159,6 +177,15 @@
             this.grbListeAbsences.TabStop = false;
             this.grbListeAbsences.Text = "Liste des absences";
             // 
+            // btnDemandeSupprAbsence
+            // 
+            this.btnDemandeSupprAbsence.Location = new System.Drawing.Point(87, 300);
+            this.btnDemandeSupprAbsence.Name = "btnDemandeSupprAbsence";
+            this.btnDemandeSupprAbsence.Size = new System.Drawing.Size(75, 23);
+            this.btnDemandeSupprAbsence.TabIndex = 2;
+            this.btnDemandeSupprAbsence.Text = "supprimer";
+            this.btnDemandeSupprAbsence.UseVisualStyleBackColor = true;
+            // 
             // btnDemandeAjoutAbsence
             // 
             this.btnDemandeAjoutAbsence.Location = new System.Drawing.Point(6, 300);
@@ -167,6 +194,7 @@
             this.btnDemandeAjoutAbsence.TabIndex = 1;
             this.btnDemandeAjoutAbsence.Text = "modifier";
             this.btnDemandeAjoutAbsence.UseVisualStyleBackColor = true;
+            this.btnDemandeAjoutAbsence.Click += new System.EventHandler(this.BtnDemandeModifAbsence_Click);
             // 
             // dgvAbsences
             // 
@@ -183,29 +211,6 @@
             this.dgvAbsences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAbsences.Size = new System.Drawing.Size(581, 275);
             this.dgvAbsences.TabIndex = 0;
-            // 
-            // dateFin
-            // 
-            this.dateFin.Location = new System.Drawing.Point(356, 19);
-            this.dateFin.Name = "dateFin";
-            this.dateFin.Size = new System.Drawing.Size(200, 20);
-            this.dateFin.TabIndex = 14;
-            // 
-            // dateDebut
-            // 
-            this.dateDebut.Location = new System.Drawing.Point(72, 19);
-            this.dateDebut.Name = "dateDebut";
-            this.dateDebut.Size = new System.Drawing.Size(200, 20);
-            this.dateDebut.TabIndex = 15;
-            // 
-            // btnDemandeSupprAbsence
-            // 
-            this.btnDemandeSupprAbsence.Location = new System.Drawing.Point(87, 300);
-            this.btnDemandeSupprAbsence.Name = "btnDemandeSupprAbsence";
-            this.btnDemandeSupprAbsence.Size = new System.Drawing.Size(75, 23);
-            this.btnDemandeSupprAbsence.TabIndex = 2;
-            this.btnDemandeSupprAbsence.Text = "supprimer";
-            this.btnDemandeSupprAbsence.UseVisualStyleBackColor = true;
             // 
             // FrmAbsence
             // 
@@ -230,8 +235,8 @@
         private System.Windows.Forms.Button btnAddMotif;
         private System.Windows.Forms.Button btnDelMotif;
         private System.Windows.Forms.TextBox txtMotif;
-        private System.Windows.Forms.Button btnAnnulPersonnel;
-        private System.Windows.Forms.Button btnEnregPersonnel;
+        private System.Windows.Forms.Button btnAnnulAbsence;
+        private System.Windows.Forms.Button btnEnregAbsence;
         private System.Windows.Forms.ComboBox cboMotif;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
