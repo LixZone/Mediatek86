@@ -7,19 +7,19 @@ namespace Mediatek86.model
         /// <summary>
         /// Valorise les propriétés
         /// </summary>
-        /// <param name="personnel"></param>
+        /// <param name="idpersonnel"></param>
         /// <param name="datedebut"></param>
         /// <param name="datefin"></param>
         /// <param name="motif"></param>
-        public Absence(Personnel personnel, DateTime datedebut, DateTime datefin, Motif motif)
+        public Absence(int idpersonnel, DateTime datedebut, DateTime datefin, Motif motif)
         {
-            this.Personnel = personnel;
+            this.Idpersonnel = idpersonnel;
             this.Datedebut = datedebut;
             this.Datefin = datefin;
             this.Motif = motif;
         }
 
-        public Personnel Personnel { get; set; }
+        public int Idpersonnel { get; set; }
         public DateTime Datedebut { get; set; }
         public DateTime Datefin { get; set; }
         public Motif Motif { get; set; }

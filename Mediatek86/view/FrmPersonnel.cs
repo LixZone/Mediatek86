@@ -234,5 +234,18 @@ namespace Mediatek86.view
             }
         }
 
+        private void BtnAfficherAbsences_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                Personnel personnel = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
+                FrmAbsence frm = new FrmAbsence(personnel);
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", titreFenetreInformation);
+            }
+        }
     }
 }

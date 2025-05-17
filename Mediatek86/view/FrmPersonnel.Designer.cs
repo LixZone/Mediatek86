@@ -231,6 +231,7 @@
             this.btnAfficherAbsences.TabIndex = 3;
             this.btnAfficherAbsences.Text = "absences";
             this.btnAfficherAbsences.UseVisualStyleBackColor = true;
+            this.btnAfficherAbsences.Click += new System.EventHandler(this.BtnAfficherAbsences_Click);
             // 
             // btnDemandeSupprPersonnel
             // 
