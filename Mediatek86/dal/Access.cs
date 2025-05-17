@@ -5,6 +5,9 @@ using System.Configuration;
 
 namespace Mediatek86.dal
 {
+    /// <summary>
+    /// Classe Access opérations sur la bdd
+    /// </summary>
     public class Access
     {
         /// <summary>

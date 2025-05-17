@@ -1,8 +1,17 @@
 ﻿namespace Mediatek86.model
 {
+    /// <summary>
+    /// Classe Model de Service
+    /// </summary>
     public class Service
     {
+        /// <summary>
+        /// propriété idservice du service
+        /// </summary>
         public int Idservice { get; }
+        /// <summary>
+        /// propriété nom du service
+        /// </summary>
         public string Nom { get; }
 
         /// <summary>

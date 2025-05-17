@@ -14,6 +14,9 @@ namespace Mediatek86.controller
         /// </summary>
         private readonly PersonnelAccess personnelAccess;
 
+        /// <summary>
+        /// Récupère les acces aux données
+        /// </summary>
         public FrmAuthentificationController()
         {
             personnelAccess = new PersonnelAccess();

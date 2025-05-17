@@ -1,8 +1,17 @@
 ﻿namespace Mediatek86.model
 {
+    /// <summary>
+    /// Classe Model de Motif
+    /// </summary>
     public class Motif
     {
+        /// <summary>
+        /// getter propriété idmotif
+        /// </summary>
         public int Idmotif { get; }
+        /// <summary>
+        /// getter propriété nom
+        /// </summary>
         public string Nom { get; }
 
         /// <summary>

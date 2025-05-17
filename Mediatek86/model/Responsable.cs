@@ -1,8 +1,17 @@
 ﻿namespace Mediatek86.model
 {
+    /// <summary>
+    /// Classe Model de Responsabke
+    /// </summary>
     public class Responsable
     {
+        /// <summary>
+        /// propriété getter login
+        /// </summary>
         public string Login { get; }
+        /// <summary>
+        /// propriété getter pwd
+        /// </summary>
         public string Pwd { get; }
 
         /// <summary>

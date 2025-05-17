@@ -2,6 +2,9 @@
 
 namespace Mediatek86.model
 {
+    /// <summary>
+    /// Classe Model de Absence
+    /// </summary>
     public class Absence
     {
         /// <summary>
@@ -19,9 +22,21 @@ namespace Mediatek86.model
             this.Motif = motif;
         }
 
+        /// <summary>
+        /// getter setter propriété idpersonnel
+        /// </summary>
         public int Idpersonnel { get; set; }
+        /// <summary>
+        /// getter setter propriété datedebut
+        /// </summary>
         public DateTime Datedebut { get; set; }
+        /// <summary>
+        /// getter setter propriété datefin
+        /// </summary>
         public DateTime Datefin { get; set; }
+        /// <summary>
+        /// getter setter propriété objet motif
+        /// </summary>
         public Motif Motif { get; set; }
     }
 }

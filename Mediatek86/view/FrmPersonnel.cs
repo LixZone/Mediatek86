@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace Mediatek86.view
 {
+    /// <summary>
+    /// Fenêtre de gestion du personnel (seuls les responsables peuvent accéder à cette fenêtre avec le bon login/pwd)
+    /// </summary>
     public partial class FrmPersonnel : Form
     {
         /// <summary>
