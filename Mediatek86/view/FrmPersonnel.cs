@@ -96,6 +96,28 @@ namespace Mediatek86.view
         }
 
         /// <summary>
+        /// Demande de suppression d'un personnel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnDemandeSupprPersonnel_Click(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                Personnel personnel = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
+                if (MessageBox.Show("Voulez-vous vraiment supprimer " + personnel.Nom + " " + personnel.Prenom + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    controller.DelPersonnel(personnel);
+                    RemplirListePersonnel();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", titreFenetreInformation);
+            }
+        }
+
+        /// <summary>
         /// Annule la demande d'ajout ou de modification d'un personnel
         /// Vide les zones de saisie du personnel
         /// </summary>
@@ -211,5 +233,6 @@ namespace Mediatek86.view
                 RemplirListeService();
             }
         }
+
     }
 }

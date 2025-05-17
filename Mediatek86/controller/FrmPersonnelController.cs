@@ -64,6 +64,15 @@ namespace Mediatek86.controller
         }
 
         /// <summary>
+        /// Demande de suppression d'un personnel
+        /// </summary>
+        /// <param name="personnel">objet personnel à supprimer</param>
+        public void DelPersonnel(Personnel personnel)
+        {
+            personnelAccess.DelPersonnel(personnel);
+        }
+
+        /// <summary>
         /// Demande d'ajout d'un service 
         /// </summary>
         /// <param name="service"></param>

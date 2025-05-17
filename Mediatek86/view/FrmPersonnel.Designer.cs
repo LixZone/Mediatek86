@@ -240,6 +240,7 @@
             this.btnDemandeSupprPersonnel.TabIndex = 2;
             this.btnDemandeSupprPersonnel.Text = "supprimer";
             this.btnDemandeSupprPersonnel.UseVisualStyleBackColor = true;
+            this.btnDemandeSupprPersonnel.Click += new System.EventHandler(this.BtnDemandeSupprPersonnel_Click);
             // 
             // btnDemandeModifPersonnel
             // 
