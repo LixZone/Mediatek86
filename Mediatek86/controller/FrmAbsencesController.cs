@@ -65,6 +65,15 @@ namespace Mediatek86.controller
         }
 
         /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="absence">objet absence à supprimer</param>
+        public void DelAbsence(Absence absence)
+        {
+            absenceAccess.DelAbsence(absence);
+        }
+
+        /// <summary>
         /// Demande d'ajout d'un motif 
         /// </summary>
         /// <param name="motif"></param>
@@ -81,5 +90,6 @@ namespace Mediatek86.controller
         {
             motifAccess.DelMotif(motif);
         }
+
     }
 }

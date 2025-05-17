@@ -185,6 +185,7 @@
             this.btnDemandeSupprAbsence.TabIndex = 2;
             this.btnDemandeSupprAbsence.Text = "supprimer";
             this.btnDemandeSupprAbsence.UseVisualStyleBackColor = true;
+            this.btnDemandeSupprAbsence.Click += new System.EventHandler(this.BtnDemandeSupprAbsence_Click);
             // 
             // btnDemandeAjoutAbsence
             // 

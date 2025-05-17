@@ -103,7 +103,29 @@ namespace Mediatek86.view
             }
         }
 
-         /// <summary>
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnDemandeSupprAbsence_Click(object sender, EventArgs e)
+        {
+            if (dgvAbsences.SelectedRows.Count > 0)
+            {
+                Absence absence = (Absence)bdgAbsences.List[bdgAbsences.Position];
+                if (MessageBox.Show("Voulez-vous vraiment supprimer l'absence du" + absence.Datedebut + " au " + absence.Datefin + " pour " + absence.Motif.Nom + " ?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    controller.DelAbsence(absence);
+                    RemplirListeAbsences(this.personnel);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", titreFenetreInformation);
+            }
+        }
+
+        /// <summary>
         /// Demande d'enregistrement de l'ajout ou de la modification d'une absence
         /// </summary>
         /// <param name="sender"></param>
@@ -238,6 +260,5 @@ namespace Mediatek86.view
                 dateFin.Text = "";
             }
         }
-
     }
 }
